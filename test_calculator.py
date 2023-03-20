@@ -18,4 +18,6 @@ def test_multiply():
 def test_divide():
     assert calculator.divide(6, 3) == 2
     assert calculator.divide(-6, 3) == -2
-    assert calculator.divide(3, 0) == ValueError("Cannot divide by zero")
+    with pytest.raises(ValueError):
+        calculator.divide(3, 0)
+
